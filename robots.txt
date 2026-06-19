@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://weizectu.github.io/portal-official-i-game-com-cn/sitemap.xml
