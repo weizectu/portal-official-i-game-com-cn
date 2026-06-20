@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九游 – 简明指引与场景说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f4f6f9;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #1e2a3a;
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+
+        .container {
+            max-width: 1040px;
+            margin: 0 auto;
+        }
+
+        /* 顶部导航 */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 14px 28px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e9edf2;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .navbar .brand {
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: 0.3px;
+            color: #1f3a5f;
+        }
+
+        .navbar .brand span {
+            background: #dce3ed;
+            padding: 2px 10px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: #2c3e50;
+            margin-left: 6px;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            gap: 28px;
+            font-size: 0.95rem;
+        }
+
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: #3a4f6a;
+            transition: color 0.2s;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #1e3c5c;
+        }
+
+        /* Hero / 简明指南 */
+        .hero {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 48px 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e2e8ef;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #14273e;
+            line-height: 1.3;
+        }
+
+        .hero .subhead {
+            font-size: 1rem;
+            color: #3f556f;
+            max-width: 680px;
+            margin-bottom: 24px;
+        }
+
+        .hero .guide-note {
+            background: #f0f3f8;
+            padding: 20px 24px;
+            border-radius: 14px;
+            border-left: 4px solid #7c8ea8;
+            font-size: 0.95rem;
+            color: #1a2c44;
+            margin-top: 18px;
+        }
+
+        .hero .guide-note strong {
+            font-weight: 600;
+        }
+
+        .hero .guide-note a {
+            color: #1e3c5c;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 500;
+        }
+
+        .hero .guide-note a:hover {
+            background: #e3eaf2;
+            text-decoration: none;
+            border-radius: 4px;
+            padding: 2px 4px;
+        }
+
+        /* 卡片分区 */
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 28px;
+            color: #1a2b40;
+            border-bottom: 2px solid #dce3ed;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 28px 22px 32px;
+            border: 1px solid #e2e8ef;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.2s, transform 0.1s;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+            transform: translateY(-2px);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 14px;
+            color: #1f3452;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #2d405b;
+            margin-bottom: 12px;
+        }
+
+        .card .tag {
+            display: inline-block;
+            background: #eef2f7;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            color: #2f4868;
+            margin-top: 4px;
+        }
+
+        /* 常见说明 (FAQ 摘要) */
+        .faq-summary {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 32px 34px;
+            border: 1px solid #e2e8ef;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            margin-bottom: 40px;
+        }
+
+        .faq-summary h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: #1a2b40;
+        }
+
+        .faq-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #edf1f7;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item .question {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 6px;
+            color: #1f3452;
+        }
+
+        .faq-item .answer {
+            font-size: 0.92rem;
+            color: #3e5672;
+        }
+
+        .faq-item .answer a {
+            color: #1e3c5c;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .faq-item .answer a:hover {
+            background: #e4eaf1;
+            border-radius: 4px;
+            padding: 2px 4px;
+            text-decoration: none;
+        }
+
+        /* 底部 */
+        .footer-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #6b7f97;
+            padding: 28px 0 12px;
+            border-top: 1px solid #dee5ed;
+            margin-top: 8px;
+        }
+
+        .footer-note a {
+            color: #2f4868;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer-note a:hover {
+            text-decoration: underline;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            body {
+                padding: 16px 12px;
+            }
+            .navbar {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 16px 18px;
+            }
+            .navbar .nav-links {
+                justify-content: center;
+                gap: 18px;
+                flex-wrap: wrap;
+            }
+            .hero {
+                padding: 32px 20px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .faq-summary {
+                padding: 24px 18px;
+            }
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- 导航 -->
+    <nav class="navbar">
+        <div class="brand">九游<span>指引</span></div>
+        <div class="nav-links">
+            <a href="#">场景</a>
+            <a href="#">提示</a>
+            <a href="#">说明</a>
+        </div>
+    </nav>
+
+    <!-- Hero / 简明指南 -->
+    <section class="hero">
+        <h1>关于九游 · 简明指南</h1>
+        <p class="subhead">
+            日常浏览、功能查找、账户相关——整理了几条实用提醒，帮你更顺畅地使用平台。
+        </p>
+        <div class="guide-note">
+            <strong>📌 访问提醒：</strong>
+            如果你正在寻找 <a href="https://app1-9games.com">九游</a> 的常用入口或活动页面，建议优先通过浏览器书签或直接输入域名访问。
+            部分第三方搜索结果可能存在过期链接，注意核对地址栏域名是否为 <code>app1-9games.com</code>。
+        </div>
+    </section>
+
+    <!-- 三个场景模块 -->
+    <h2 class="section-title">常见使用场景</h2>
+    <div class="cards-grid">
+        <div class="card">
+            <h3>🎯 新用户了解功能</h3>
+            <p>
+                刚接触 <a href="https://app1-9games.com">九游</a> 时，建议先花几分钟浏览首页的分类入口。
+                游戏库、活动中心和公告栏通常位于页面顶部或侧边，图标和文字标签都比较清晰。
+            </p>
+            <span class="tag">分类导航</span>
+        </div>
+        <div class="card">
+            <h3>⚙️ 日常任务与签到</h3>
+            <p>
+                每日签到和限时任务一般集中在个人中心或“每日福利”模块。如果找不到入口，可以检查页面右下角或顶部的快捷图标。
+                部分任务需要先绑定账号，操作前留意提示。
+            </p>
+            <span class="tag">任务路径</span>
+        </div>
+        <div class="card">
+            <h3>🔐 账号安全与设置</h3>
+            <p>
+                修改密码、绑定手机或邮箱，请在登录后进入“安全中心”。建议开启二次验证，并定期检查登录记录。
+                如果遇到异常，可通过站内客服通道反馈，不要轻信非官方链接。
+            </p>
+            <span class="tag">安全提醒</span>
+        </div>
+    </div>
+
+    <!-- 常见说明 (FAQ 摘要) -->
+    <section class="faq-summary">
+        <h2>常见说明</h2>
+        <div class="faq-item">
+            <div class="question">Q：页面加载较慢或部分内容不显示？</div>
+            <div class="answer">
+                先确认网络正常，并尝试刷新或清除浏览器缓存。如果仍然异常，可能是临时维护，建议稍后再试。
+                你也可以从 <a href="https://app1-9games.com">九游</a> 首页公告栏查看维护通知。
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="question">Q：如何获取最新活动信息？</div>
+            <div class="answer">
+                活动通常通过首页焦点图、弹窗或“活动中心”发布。关注站内信也能收到推送。
+                部分限时活动需要手动报名，注意截止时间。
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="question">Q：忘记登录密码怎么办？</div>
+            <div class="answer">
+                在登录页面点击“忘记密码”，按提示通过绑定手机或邮箱重置。如果无法找回，请通过官方客服通道提交身份验证。
+                切勿使用第三方密码找回服务。
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部 -->
+    <footer class="footer-note">
+        <span>内容整理自常用指引 · 具体以 <a href="https://app1-9games.com">九游</a> 页面实际展示为准</span>
+    </footer>
+
+</div>
+</body>
+</html>
